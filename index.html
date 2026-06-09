@@ -3,58 +3,102 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Agro Forte Sustentável</title>
+    <title>Agro Forte - Futuro Sustentável</title>
+
+    <!-- Link do CSS -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+    <!-- ================= HEADER ================= -->
     <header>
-        <h1>Agro Forte Sustentável</h1>
-        <nav>
+        <div class="logo">🌱 Agro Forte</div>
+
+        <!-- Menu de navegação -->
+        <nav id="nav">
             <ul>
-                <li><a href="#sobre">Sobre Nós</a></li>
-                <li><a href="#produtos">Produtos</a></li>
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#impacto">Impacto</a></li>
+                <li><a href="#agricultores">Agricultores</a></li>
                 <li><a href="#contato">Contato</a></li>
             </ul>
         </nav>
+
+        <!-- Botão menu mobile -->
+        <div class="menu-toggle" id="menu-toggle">
+            ☰
+        </div>
     </header>
 
-    <main>
-        <section id="sobre">
-            <h2>Sobre Nós</h2>
-            <p>Somos uma empresa dedicada à agricultura sustentável, usando práticas que respeitam o meio ambiente e promovem alimentos de qualidade.</p>
-        </section>
+    <!-- ================= HERO SECTION ================= -->
+    <section class="hero">
+        <h1>Construindo um Futuro Sustentável</h1>
+        <p id="typing-text"></p>
+        <button class="btn-primary">Saiba Mais</button>
+    </section>
 
-        <section id="produtos">
-            <h2>Nossos Produtos</h2>
-            <div class="produtos-container">
-                <div class="produto">
-                    <h3>Frutas Orgânicas</h3>
-                    <p>Colhidas diretamente de nossos pomares sustentáveis.</p>
-                </div>
-                <div class="produto">
-                    <h3>Verduras Frescas</h3>
-                    <p>Sem agrotóxicos, cultivadas com responsabilidade ambiental.</p>
-                </div>
-                <div class="produto">
-                    <h3>Grãos Sustentáveis</h3>
-                    <p>Produzidos com técnicas que preservam o solo e a biodiversidade.</p>
-                </div>
-            </div>
-        </section>
+    <!-- ================= SOBRE ================= -->
+    <section id="sobre" class="section">
+        <h2>O Que Fazemos</h2>
+        <p>
+            A Agro Forte ajuda agricultores a produzir mais, preservando o meio ambiente.
+            Utilizamos técnicas modernas que economizam água, protegem o solo e reduzem impactos ambientais.
+        </p>
+    </section>
 
-        <section id="contato">
-            <h2>Contato</h2>
-            <p>Email: contato@agrofortesustentavel.com</p>
-            <p>Telefone: (11) 99999-9999</p>
-        </section>
+    <!-- ================= IMPACTO ================= -->
+    <section id="impacto" class="section cards">
+        <h2>Nosso Impacto</h2>
 
-        <button id="temaBtn">Mudar Tema</button>
-    </main>
+        <div class="card">
+            <h3>🌍 Meio Ambiente</h3>
+            <p>Redução do uso de agrotóxicos e preservação da biodiversidade.</p>
+        </div>
 
+        <div class="card">
+            <h3>👩‍🌾 Agricultores</h3>
+            <p>Capacitação e tecnologia acessível para pequenos produtores.</p>
+        </div>
+
+        <div class="card">
+            <h3>🤝 Sociedade</h3>
+            <p>Alimentos mais saudáveis e produção consciente.</p>
+        </div>
+    </section>
+
+    <!-- ================= AGRICULTORES ================= -->
+    <section id="agricultores" class="section">
+        <h2>Tecnologia no Campo</h2>
+        <p>
+            Utilizamos sensores, irrigação inteligente e energia solar para tornar
+            o campo mais eficiente e sustentável.
+        </p>
+
+        <button id="darkModeBtn" class="btn-secondary">
+            Alternar Modo Escuro
+        </button>
+    </section>
+
+    <!-- ================= CONTATO ================= -->
+    <section id="contato" class="section">
+        <h2>Contato</h2>
+
+        <form id="contactForm">
+            <input type="text" placeholder="Seu nome" required>
+            <input type="email" placeholder="Seu email" required>
+            <textarea placeholder="Sua mensagem" required></textarea>
+            <button type="submit" class="btn-primary">Enviar</button>
+        </form>
+
+        <p id="formMessage"></p>
+    </section>
+
+    <!-- ================= FOOTER ================= -->
     <footer>
-        <p>&copy; 2026 Agro Forte Sustentável. Todos os direitos reservados.</p>
+        <p>© 2026 Agro Forte - Futuro Sustentável</p>
     </footer>
 
+    <!-- Link do JavaScript -->
     <script src="script.js"></script>
 </body>
 </html>

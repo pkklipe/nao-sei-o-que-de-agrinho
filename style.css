@@ -1,78 +1,186 @@
-/* Reset básico */
+/* ================= RESET ================= */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* ================= VARIÁVEIS DE COR ================= */
+:root {
+    --verde: #2ecc71;
+    --azul: #1abc9c;
+    --escuro: #1e272e;
+    --claro: #f5f6fa;
+}
+
+/* ================= BODY ================= */
 body {
     font-family: Arial, sans-serif;
-    line-height: 1.6;
-    background-color: #f0f8f5;
-    color: #2c3e50;
-    transition: background-color 0.3s, color 0.3s;
+    background: var(--claro);
+    color: #333;
+    transition: background 0.4s ease, color 0.4s ease;
 }
 
+/* ================= HEADER ================= */
 header {
-    background-color: #27ae60;
-    color: white;
-    padding: 20px 0;
-    text-align: center;
-}
-
-header nav ul {
-    list-style: none;
     display: flex;
-    justify-content: center;
-    gap: 20px;
-    margin-top: 10px;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+    background: var(--verde);
+    color: white;
 }
 
-header nav ul li a {
-    color: white;
-    text-decoration: none;
+.logo {
+    font-size: 1.5rem;
     font-weight: bold;
 }
 
-main {
-    padding: 20px;
-}
-
-section {
-    margin-bottom: 40px;
-}
-
-.produtos-container {
+nav ul {
+    list-style: none;
     display: flex;
+    gap: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+    transition: opacity 0.3s;
+}
+
+nav a:hover {
+    opacity: 0.7;
+}
+
+/* Menu Mobile */
+.menu-toggle {
+    display: none;
+    font-size: 1.8rem;
+    cursor: pointer;
+}
+
+/* ================= HERO ================= */
+.hero {
+    text-align: center;
+    padding: 80px 20px;
+    background: linear-gradient(to right, var(--verde), var(--azul));
+    color: white;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    animation: fadeIn 2s ease;
+}
+
+/* ================= SECTIONS ================= */
+.section {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+/* ================= CARDS ================= */
+.cards {
+    display: flex;
+    justify-content: center;
     gap: 20px;
     flex-wrap: wrap;
 }
 
-.produto {
-    background-color: #ecf0f1;
-    padding: 15px;
-    border-radius: 8px;
-    flex: 1 1 200px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+.card {
+    background: white;
+    padding: 20px;
+    width: 250px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
 }
 
-button#temaBtn {
+.card:hover {
+    transform: translateY(-10px);
+}
+
+/* ================= BOTÕES ================= */
+.btn-primary, .btn-secondary {
     padding: 10px 20px;
-    background-color: #27ae60;
-    color: white;
     border: none;
-    border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s;
+    border-radius: 5px;
+    margin-top: 15px;
+    transition: 0.3s;
 }
 
-button#temaBtn:hover {
-    background-color: #2ecc71;
+.btn-primary {
+    background: var(--verde);
+    color: white;
 }
 
+.btn-secondary {
+    background: var(--azul);
+    color: white;
+}
+
+.btn-primary:hover, .btn-secondary:hover {
+    opacity: 0.8;
+}
+
+/* ================= FORM ================= */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 400px;
+    margin: auto;
+}
+
+input, textarea {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+/* ================= FOOTER ================= */
 footer {
+    background: var(--verde);
+    color: white;
+    padding: 20px;
     text-align: center;
-    padding: 15px 0;
-    background-color: #27ae60;
+}
+
+/* ================= ANIMAÇÃO ================= */
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+/* ================= RESPONSIVO ================= */
+@media (max-width: 768px) {
+    nav {
+        display: none;
+    }
+
+    nav.active {
+        display: block;
+        position: absolute;
+        top: 70px;
+        right: 20px;
+        background: var(--verde);
+        padding: 20px;
+        border-radius: 8px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+}
+
+/* ================= DARK MODE ================= */
+.dark-mode {
+    background: var(--escuro);
     color: white;
 }

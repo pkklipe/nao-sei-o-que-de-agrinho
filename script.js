@@ -1,14 +1,41 @@
-const temaBtn = document.getElementById('temaBtn');
-let temaEscuro = false;
+// ================= MENU RESPONSIVO =================
+const menuToggle = document.getElementById("menu-toggle");
+const nav = document.getElementById("nav");
 
-temaBtn.addEventListener('click', () => {
-    if (!temaEscuro) {
-        document.body.style.backgroundColor = '#2c3e50';
-        document.body.style.color = '#ecf0f1';
-        temaEscuro = true;
-    } else {
-        document.body.style.backgroundColor = '#f0f8f5';
-        document.body.style.color = '#2c3e50';
-        temaEscuro = false;
+menuToggle.addEventListener("click", () => {
+    nav.classList.toggle("active");
+});
+
+// ================= EFEITO DIGITANDO =================
+const text = "Tecnologia, inovação e sustentabilidade para transformar o campo.";
+const typingElement = document.getElementById("typing-text");
+
+let index = 0;
+
+function typeEffect() {
+    if (index < text.length) {
+        typingElement.innerHTML += text.charAt(index);
+        index++;
+        setTimeout(typeEffect, 40);
     }
+}
+
+typeEffect();
+
+// ================= DARK MODE =================
+const darkModeBtn = document.getElementById("darkModeBtn");
+
+darkModeBtn.addEventListener("click", () => {
+    document.body.classList.toggle("dark-mode");
+});
+
+// ================= FORMULÁRIO =================
+const form = document.getElementById("contactForm");
+const formMessage = document.getElementById("formMessage");
+
+form.addEventListener("submit", function(e) {
+    e.preventDefault();
+    formMessage.innerText = "Mensagem enviada com sucesso!";
+    formMessage.style.color = "green";
+    form.reset();
 });
